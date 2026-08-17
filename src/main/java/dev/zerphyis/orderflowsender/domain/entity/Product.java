@@ -15,15 +15,16 @@ public class Product {
     public Product() {
     }
 
-    public Product(Integer stockQuantity, String sku, String category, BigDecimal price, String description, String name, UUID id) {
-        this.stockQuantity = stockQuantity;
-        this.sku = sku;
-        this.category = category;
-        this.price = price;
-        this.description = description;
-        this.name = name;
+    public Product(UUID id, String name, String description, String category, String sku, BigDecimal price, Integer stockQuantity) {
         this.id = id;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.sku = sku;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
     }
+
     private void validateId(UUID id) {
         if (id == null) {
             throw new IllegalArgumentException("Product id cannot be null");
