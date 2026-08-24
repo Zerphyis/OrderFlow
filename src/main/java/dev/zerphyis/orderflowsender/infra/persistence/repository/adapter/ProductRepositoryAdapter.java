@@ -36,7 +36,7 @@ public class ProductRepositoryAdapter  implements ProductRepository {
     }
 
     @Override
-    public List<Product> findAll() {
+    public List<Product> findAll(int offset, int size) {
         return repositoryJpa.findAll()
                 .stream()
                 .map(productMapper::toDomain)
