@@ -11,5 +11,5 @@ public interface ProductRepository {
 
     Optional<Product> findById(UUID id);
 
-    List<Product> findAll();
+    List<Product> findAll(int offset, int size);
 }
