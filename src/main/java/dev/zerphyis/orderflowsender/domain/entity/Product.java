@@ -1,6 +1,6 @@
 package dev.zerphyis.orderflowsender.domain.entity;
 
-
+import dev.zerphyis.orderflowsender.aplication.exceptions.EstoqueinsuficienteException;
 
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -143,6 +143,34 @@ public class Product {
         }
 
         this.stockQuantity -= amount;
+    }
+
+    public void reservarEstoque(int quantidade) {
+
+        if (quantidade <= 0) {
+            throw new IllegalArgumentException(
+                    "Reservation quantity must be positive"
+            );
+        }
+
+        if (quantidade > this.stockQuantity) {
+            throw new EstoqueinsuficienteException(
+                    "Insufficient stock for product " + this.sku
+            );
+        }
+
+        this.stockQuantity -= quantidade;
+    }
+
+    public void liberarEstoque(int quantidade) {
+
+        if (quantidade <= 0) {
+            throw new IllegalArgumentException(
+                    "Quantity to release must be positive"
+            );
+        }
+
+        this.stockQuantity += quantidade;
     }
 
     public void changePrice(BigDecimal newPrice) {
