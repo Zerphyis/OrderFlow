@@ -7,19 +7,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductMapper {
 
-    public ProductJpaEntity toEntity(Product product){
-        return  new ProductJpaEntity(
+    public ProductJpaEntity toEntity(Product product) {
+
+        return new ProductJpaEntity(
                 product.getId(),
                 product.getName(),
                 product.getDescription(),
                 product.getPrice(),
                 product.getCategory(),
                 product.getSku(),
-                product.getStockQuantity()
+                product.getStockQuantity(),
+                product.isActive()
         );
     }
 
     public Product toDomain(ProductJpaEntity productJpa) {
+
         return new Product(
                 productJpa.getId(),
                 productJpa.getName(),
@@ -27,7 +30,8 @@ public class ProductMapper {
                 productJpa.getCategory(),
                 productJpa.getSku(),
                 productJpa.getPrice(),
-                productJpa.getStockQuantity()
+                productJpa.getStockQuantity(),
+                productJpa.isActive()
         );
     }
 }

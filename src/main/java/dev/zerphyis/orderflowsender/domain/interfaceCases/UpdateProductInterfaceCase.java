@@ -1,7 +1,7 @@
 package dev.zerphyis.orderflowsender.domain.interfaceCases;
 
-import dev.zerphyis.orderflowsender.aplication.dtos.ProductResponseDto;
-import dev.zerphyis.orderflowsender.aplication.dtos.UpdateProductRequestDto;
+import dev.zerphyis.orderflowsender.infra.dtos.ProductResponseDto;
+import dev.zerphyis.orderflowsender.infra.dtos.UpdateProductRequestDto;
 
 import java.util.UUID;
 
