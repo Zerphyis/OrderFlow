@@ -14,5 +14,10 @@ public class ProductUseCaseConfig {
         return new CreateProductUseCase(repository);
     }
 
+    @Bean
+    public FindByIdProductInterfaceCase findByIdProductUseCase(ProductRepository repository){
+        return new FindByIdProductUseCase(repository);
+    }
+
 
 }
