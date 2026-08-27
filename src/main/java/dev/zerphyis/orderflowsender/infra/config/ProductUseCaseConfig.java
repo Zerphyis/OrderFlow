@@ -29,5 +29,8 @@ public class ProductUseCaseConfig {
         return new UpdateProductUseCase(repository);
     }
 
-
+    @Bean
+    public RemoveProductInterfaceCase RemoveProductInterfaceCase(ProductRepository repository){
+        return new RemoveProducUseCase(repository);
+    }
 }
