@@ -24,4 +24,10 @@ public class ProductUseCaseConfig {
         return new ListProductUseCase(repository);
     }
 
+    @Bean
+    public UpdateProductInterfaceCase UpdateProductInterfaceCase(ProductRepository repository){
+        return new UpdateProductUseCase(repository);
+    }
+
+
 }
