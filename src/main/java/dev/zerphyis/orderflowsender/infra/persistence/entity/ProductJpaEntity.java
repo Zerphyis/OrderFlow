@@ -10,7 +10,6 @@ import java.util.UUID;
 public class ProductJpaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(nullable = false)
@@ -50,9 +49,6 @@ public class ProductJpaEntity {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.price = price;
-        this.category = category;
-        this.sku = sku;
         this.price = price;
         this.category = category;
         this.sku = sku;
