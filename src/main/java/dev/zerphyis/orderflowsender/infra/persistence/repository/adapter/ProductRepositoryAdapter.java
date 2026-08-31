@@ -5,53 +5,62 @@ import dev.zerphyis.orderflowsender.domain.repository.ProductRepository;
 import dev.zerphyis.orderflowsender.infra.persistence.entity.ProductJpaEntity;
 import dev.zerphyis.orderflowsender.infra.persistence.mapper.ProductMapper;
 import dev.zerphyis.orderflowsender.infra.persistence.repository.ProductRepositoryJpa;
+import org.springframework.stereotype.Repository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Component
+@Repository
 public class ProductRepositoryAdapter implements ProductRepository {
 
-    private final ProductRepositoryJpa repositoryJpa;
-    private final ProductMapper productMapper;
+    private final ProductRepositoryJpa repository;
+    private final ProductMapper mapper;
 
-    public ProductRepositoryAdapter(
-            ProductRepositoryJpa repositoryJpa,
-            ProductMapper productMapper
-    ) {
-        this.repositoryJpa = repositoryJpa;
-        this.productMapper = productMapper;
+    public ProductRepositoryAdapter(ProductRepositoryJpa repository, ProductMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
     }
 
     @Override
     public Product save(Product product) {
-        ProductJpaEntity entity = productMapper.toEntity(product);
 
-        ProductJpaEntity savedEntity = repositoryJpa.save(entity);
+        ProductJpaEntity entity = mapper.toEntity(product);
 
-        return productMapper.toDomain(savedEntity);
+        ProductJpaEntity saved = repository.save(entity);
+
+        return mapper.toDomain(saved);
     }
 
     @Override
     public Optional<Product> findById(UUID id) {
-        return repositoryJpa.findByIdAndActiveTrue(id)
-                .map(productMapper::toDomain);
+
+        return repository.findByIdAndActiveTrue(id).map(mapper::toDomain);
     }
 
     @Override
-    public List<Product> findAll(int offset, int size) {
-
-        int page = offset / size;
+    public List<Product> findAll(int page, int size) {
 
         Pageable pageable = PageRequest.of(page, size);
 
-        return repositoryJpa.findAllByActiveTrue(pageable)
+        return repository.findAll(pageable).getContent().stream().map(mapper::toDomain).toList();
+    }
+
+    @Override
+    public Optional<Product> findBySku(String sku) {
+        return repository
+                .findBySkuAndActiveTrue(sku)
+                .map(mapper::toDomain);
+    }
+
+    @Override
+    public List<Product> findByCategory(String category) {
+        return repository
+                .findByCategoryAndActiveTrue(category)
                 .stream()
-                .map(productMapper::toDomain)
+                .map(mapper::toDomain)
                 .toList();
     }
 }
