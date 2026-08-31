@@ -7,9 +7,14 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface ProductRepository {
-    Product save(Product order);
+
+    Product save(Product product);
 
     Optional<Product> findById(UUID id);
 
-    List<Product> findAll(int offset, int size);
+    List<Product> findAll(int page, int size);
+
+    Optional<Product> findBySku(String sku);
+
+    List<Product> findByCategory(String category);
 }

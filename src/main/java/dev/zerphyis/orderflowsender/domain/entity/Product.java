@@ -182,6 +182,10 @@ public class Product {
         this.active = false;
     }
 
+    public void activate() {
+        this.active = true;
+    }
+
     public boolean isActive() {
         return active;
     }
