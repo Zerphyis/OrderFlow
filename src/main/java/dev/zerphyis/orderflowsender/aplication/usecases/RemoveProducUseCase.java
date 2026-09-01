@@ -1,5 +1,6 @@
 package dev.zerphyis.orderflowsender.aplication.usecases;
 
+import dev.zerphyis.orderflowsender.aplication.exceptions.ProductNotFoundException;
 import dev.zerphyis.orderflowsender.domain.entity.Product;
 import dev.zerphyis.orderflowsender.domain.interfaceCases.RemoveProductInterfaceCase;
 import dev.zerphyis.orderflowsender.domain.repository.ProductRepository;
@@ -18,7 +19,7 @@ public class RemoveProducUseCase implements RemoveProductInterfaceCase {
 
         Product product = productRepository.findById(id)
                 .orElseThrow(() ->
-                        new IllegalArgumentException("Product not found")
+                        new ProductNotFoundException(id)
                 );
 
         product.deactivate();
