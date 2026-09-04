@@ -1,7 +1,7 @@
 package dev.zerphyis.orderflowsender.infra.controller.product;
 
-import dev.zerphyis.orderflowsender.aplication.exceptions.ProductNotFoundException;
-import dev.zerphyis.orderflowsender.aplication.exceptions.SkuNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.ProductNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.SkuNotFoundException;
 import dev.zerphyis.orderflowsender.infra.config.HandlerController;
 import dev.zerphyis.orderflowsender.infra.dtos.ProductRequestDto;
 import dev.zerphyis.orderflowsender.infra.dtos.ProductResponseDto;
