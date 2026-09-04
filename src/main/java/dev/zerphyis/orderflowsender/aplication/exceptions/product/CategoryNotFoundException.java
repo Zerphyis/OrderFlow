@@ -1,4 +1,4 @@
-package dev.zerphyis.orderflowsender.aplication.exceptions;
+package dev.zerphyis.orderflowsender.aplication.exceptions.product;
 
 public class CategoryNotFoundException extends RuntimeException {
     public CategoryNotFoundException(String category) {
