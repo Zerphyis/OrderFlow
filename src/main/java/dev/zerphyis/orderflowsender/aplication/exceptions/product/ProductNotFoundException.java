@@ -1,4 +1,4 @@
-package dev.zerphyis.orderflowsender.aplication.exceptions;
+package dev.zerphyis.orderflowsender.aplication.exceptions.product;
 
 import java.util.UUID;
 
