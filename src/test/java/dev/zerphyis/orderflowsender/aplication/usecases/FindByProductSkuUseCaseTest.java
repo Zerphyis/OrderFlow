@@ -1,6 +1,6 @@
 package dev.zerphyis.orderflowsender.aplication.usecases;
 
-import dev.zerphyis.orderflowsender.aplication.exceptions.SkuNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.SkuNotFoundException;
 import dev.zerphyis.orderflowsender.domain.entity.Product;
 import dev.zerphyis.orderflowsender.domain.repository.ProductRepository;
 import dev.zerphyis.orderflowsender.infra.dtos.ProductResponseDto;
@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
