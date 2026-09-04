@@ -1,6 +1,6 @@
 package dev.zerphyis.orderflowsender.domain.entity;
 
-import dev.zerphyis.orderflowsender.aplication.exceptions.EstoqueinsuficienteException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.EstoqueinsuficienteException;
 
 import java.math.BigDecimal;
 import java.util.UUID;
