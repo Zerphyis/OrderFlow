@@ -1,6 +1,6 @@
 package dev.zerphyis.orderflowsender.aplication.usecases;
 
-import dev.zerphyis.orderflowsender.aplication.exceptions.ProductNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.ProductNotFoundException;
 import dev.zerphyis.orderflowsender.domain.entity.Product;
 import dev.zerphyis.orderflowsender.domain.interfaceCases.RemoveProductInterfaceCase;
 import dev.zerphyis.orderflowsender.domain.repository.ProductRepository;

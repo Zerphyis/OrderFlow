@@ -1,8 +1,8 @@
 package dev.zerphyis.orderflowsender.infra.config;
 
-import dev.zerphyis.orderflowsender.aplication.exceptions.CategoryNotFoundException;
-import dev.zerphyis.orderflowsender.aplication.exceptions.ProductNotFoundException;
-import dev.zerphyis.orderflowsender.aplication.exceptions.SkuNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.CategoryNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.ProductNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.SkuNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

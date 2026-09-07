@@ -1,6 +1,6 @@
 package dev.zerphyis.orderflowsender.aplication.usecases;
 
-import dev.zerphyis.orderflowsender.aplication.exceptions.CategoryNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.CategoryNotFoundException;
 import dev.zerphyis.orderflowsender.domain.entity.Product;
 import dev.zerphyis.orderflowsender.domain.interfaceCases.FindByProductCategoryInterfaceCase;
 import dev.zerphyis.orderflowsender.domain.repository.ProductRepository;
