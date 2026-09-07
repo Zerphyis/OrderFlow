@@ -6,22 +6,22 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Order {
+public class OrderProduct {
     private UUID id;
-    private  UUID custumerId;
-    private List<OrderItem> itens;
+    private UUID costumerid;
+    private List<OrderItem> items;
 
-    public Order(UUID id, UUID custumerId, List<OrderItem> itens) {
+    public OrderProduct(UUID id, UUID costumerid, List<OrderItem> items) {
         this.id = id;
-        this.custumerId = custumerId;
-        this.itens = itens;
+        this.costumerid = costumerid;
+        this.items = items;
     }
 
-    public static Order create(
+    public static OrderProduct create(
             UUID customerId,
             List<OrderItem> items
     ) {
-        return new Order(
+        return new OrderProduct(
                 UUID.randomUUID(),
                 customerId,
                 items
@@ -56,7 +56,30 @@ public class Order {
             );
         }
 
-        itens.add(item);
+        items.add(item);
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getCostumerid() {
+        return costumerid;
+    }
+
+    public void setCostumerid(UUID costumerid) {
+        this.costumerid = costumerid;
+    }
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
+    }
 }
