@@ -1,6 +1,6 @@
 package dev.zerphyis.orderflowsender.aplication.usecases;
 
-import dev.zerphyis.orderflowsender.aplication.exceptions.SkuNotFoundException;
+import dev.zerphyis.orderflowsender.aplication.exceptions.product.SkuNotFoundException;
 import dev.zerphyis.orderflowsender.domain.entity.Product;
 import dev.zerphyis.orderflowsender.domain.interfaceCases.FindBySkuProductInterfaceCase;
 import dev.zerphyis.orderflowsender.domain.repository.ProductRepository;
